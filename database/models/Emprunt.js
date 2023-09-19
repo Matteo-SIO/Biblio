@@ -2,7 +2,7 @@ let entity;
 
 module.exports.init = (instance) => {
     entity = instance.define('emprunt', {
-
+        // relations are defined in database/tables.js
     });
     return entity;
 };

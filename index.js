@@ -1,5 +1,5 @@
 const bdd = require('./database/bdd');
-const server = require('./server');
+const server = require('./restServer');
 const debug_db = require('./debug_db');
 
 // Connect to DB
@@ -16,7 +16,7 @@ bdd.connect({
     await debug_db.doDebug();
 
     // Run the REST API server at port 3000
-    server.init(3000);
+    server.runServer(3000);
 
 });
 

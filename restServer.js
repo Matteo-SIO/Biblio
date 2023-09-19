@@ -1,6 +1,7 @@
 const fastify = require('fastify');
 
-module.exports.init = (port) => {
+module.exports.runServer = (port) => {
+    // Init Fastify lib
     let app = fastify({
         logger: true,
         ignoreTrailingSlash: true
@@ -20,5 +21,4 @@ module.exports.init = (port) => {
 
         app.log.info(`Fastify is listening on port: ${address}`);
     });
-
 }
