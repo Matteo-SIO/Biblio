@@ -33,6 +33,10 @@ module.exports.getOnePeople = async (query) => {
     return await entity.findOne({where: query});
 }
 
+module.exports.getAllPeoples = async (query, options = {}) => {
+    return await entity.findAll({where: query, ...options});
+}
+
 // Update
 module.exports.updatePeople = async (query, values) => {
     await entity.update(values, {where: query});

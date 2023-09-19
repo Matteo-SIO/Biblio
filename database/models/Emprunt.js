@@ -1,4 +1,3 @@
-const {Sequelize} = require("sequelize");
 let entity;
 
 module.exports.init = (instance) => {
@@ -18,8 +17,12 @@ module.exports.createEmprunt = (values) => {
 }
 
 // Get
-module.exports.getAllEmprunts = async (query) => {
-    return await entity.findAll({where: query});
+module.exports.getOneEmprunt = async (query) => {
+    return await entity.findOne({where: query});
+}
+
+module.exports.getAllEmprunts = async (query, options = {}) => {
+    return await entity.findAll({where: query, ...options});
 }
 
 // Delete

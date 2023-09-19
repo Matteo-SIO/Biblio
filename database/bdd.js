@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const tables = require('./tables')
 let instance;
 
-module.exports.init = ({host, port, user, pass, dnName}) => {
+module.exports.connect = ({host, port, user, pass, dnName}) => {
     return new Promise((resolve) => {
         instance = new Sequelize({
             host,

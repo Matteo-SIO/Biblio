@@ -39,8 +39,8 @@ module.exports.getOneBook = async (query) => {
     return await entity.findOne({where: query});
 }
 
-module.exports.getAllBooks = async (query) => {
-    return await entity.findAll({where: query});
+module.exports.getAllBooks = async (query, options = {}) => {
+    return await entity.findAll({where: query, ...options});
 }
 
 // Delete
